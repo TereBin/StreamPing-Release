@@ -76,6 +76,47 @@ install.cmd -ObsPath "D:\Apps\obs-studio"
 Discord 연결을 완료하려면 선택한 채널에서 Webhook을 만들 수 있는 권한이 필요합니다.
 **연결 해제**를 누르면 StreamPing이 연결 과정에서 생성한 Webhook도 함께 삭제됩니다.
 
+#### Discord 메시지 예시
+
+멘션 없이 알림만 보내려면 `{role}`, `@everyone`, `@here`를 넣지 않습니다.
+
+```text
+🔴 {channel} 방송 시작!
+
+{title}
+카테고리: {category}
+{url}
+```
+
+선택한 역할을 멘션하려면 먼저 **역할 선택**을 완료한 뒤 원하는 위치에 `{role}`을
+넣습니다. 역할 이름이나 숫자 ID를 메시지에 직접 입력할 필요는 없습니다.
+
+```text
+{role} 방송이 시작됐어요!
+
+{title}
+{url}
+```
+
+서버의 모든 구성원에게 알리려면 `@everyone`을 직접 입력합니다.
+
+```text
+@everyone {channel} 방송 시작!
+{title}
+{url}
+```
+
+현재 온라인 상태인 구성원을 중심으로 알리려면 `@here`를 직접 입력합니다.
+
+```text
+@here 지금 방송을 시작합니다!
+{title}
+{url}
+```
+
+`@everyone`과 `@here`는 Discord 서버 및 채널의 멘션 권한이 허용된 경우에만 실제 알림이
+전달됩니다. 불필요하게 많은 구성원에게 알림을 보내지 않도록 둘 중 필요한 표현만 사용하세요.
+
 #### 수동 Webhook 사용
 
 간편 연결을 사용할 수 없는 경우 **수동 Webhook (고급)**에 Discord Webhook URL을 직접
