@@ -1,24 +1,146 @@
-# StreamPing Releases
+# StreamPing 배포판
 
-StreamPing is a Windows OBS Studio plugin that checks a CHZZK channel when streaming starts,
-sends a Discord notification, and opens an X compose window with a prepared post.
+StreamPing은 OBS Studio에서 방송을 시작하면 치지직 채널의 LIVE 상태를 확인한 뒤
+Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 여는 Windows용 플러그인입니다.
 
-## Download
+## 주요 기능
 
-Download the latest `StreamPing-*-windows-x64.zip` file from
-[Releases](https://github.com/TereBin/StreamPing-Release/releases/latest).
+- OBS 방송 시작 시 치지직 LIVE 상태 자동 확인
+- Discord 채널 선택 방식의 간편 연결 및 자동 알림
+- Discord 알림 메시지 테스트
+- 방송 정보가 입력된 X 작성 화면 열기
+- Discord와 X 메시지 템플릿 편집
+- OBS 설치 위치 자동 탐색 및 기존 버전 업데이트
 
-## Install
+> X에는 자동으로 게시하지 않습니다. StreamPing은 작성 화면만 열며, 최종 게시는 사용자가
+> 직접 확인하고 실행해야 합니다.
 
-1. Extract the ZIP file.
-2. Close OBS Studio.
-3. Run `install.cmd` from the extracted folder.
-4. Start OBS Studio and open **Tools > StreamPing Settings**.
+## 요구 사항
 
-The installer locates the OBS Studio installation automatically and updates an existing
-StreamPing installation when present.
+- Windows 10 이상
+- OBS Studio 64비트
+- 인터넷 연결
 
-## Source Code
+## 다운로드
 
-Source code, build instructions, and technical documentation are available at
-[TereBin/StreamPing](https://github.com/TereBin/StreamPing).
+[최신 릴리스](https://github.com/TereBin/StreamPing-Release/releases/latest)에서
+`StreamPing-버전-windows-x64.zip` 파일을 다운로드합니다.
+
+다운로드한 파일은 같은 릴리스에 첨부된 `SHA256SUMS.txt`로 무결성을 확인할 수 있습니다.
+
+## 설치 및 업데이트
+
+1. OBS Studio를 완전히 종료합니다.
+2. 다운로드한 ZIP 파일을 원하는 폴더에 압축 해제합니다.
+3. 압축을 해제한 폴더의 `install.cmd`를 실행합니다.
+4. 관리자 권한 요청이 나타나면 승인합니다.
+5. `StreamPing 업데이트가 완료되었습니다.`라는 메시지를 확인합니다.
+6. OBS Studio를 실행합니다.
+7. OBS 상단 메뉴에서 **도구 > StreamPing 설정**을 엽니다.
+
+설치 프로그램은 OBS Studio의 설치 위치를 자동으로 찾습니다. 기존 StreamPing이 설치되어
+있으면 기존 DLL을 `streamping.dll.bak`으로 백업한 뒤 새 버전으로 교체합니다. 새 버전으로
+업데이트할 때도 위와 같은 순서로 `install.cmd`를 다시 실행하면 됩니다.
+
+### 포터블 OBS 또는 자동 탐색 실패 시
+
+명령 프롬프트에서 OBS가 설치된 최상위 폴더를 직접 지정합니다.
+
+```bat
+install.cmd -ObsPath "D:\Apps\obs-studio"
+```
+
+지정한 폴더 안에 `bin\64bit\obs64.exe`가 있어야 합니다.
+
+## 설정 방법
+
+### 1. 치지직 채널 설정
+
+1. **치지직 > 채널**에 알림을 보낼 치지직 채널 URL 또는 32자리 채널 ID를 입력합니다.
+2. 하단의 **치지직 확인**을 누릅니다.
+3. 채널 이름과 현재 LIVE 상태가 표시되는지 확인합니다.
+
+채널 URL을 입력하면 StreamPing이 채널 ID를 자동으로 추출해 저장합니다.
+
+### 2. Discord 알림 설정
+
+1. **방송 시작 시 Discord 자동 알림**을 체크합니다.
+2. **Discord 연결**을 누릅니다.
+3. 브라우저에서 Discord에 로그인합니다.
+4. 알림을 받을 서버와 채널을 선택하고 권한을 승인합니다.
+5. OBS로 돌아와 상태가 `연결됨: 채널 이름`으로 바뀌는지 확인합니다.
+6. **알림 메시지 테스트**를 눌러 실제 Discord 메시지가 도착하는지 확인합니다.
+
+Discord 연결을 완료하려면 선택한 채널에서 Webhook을 만들 수 있는 권한이 필요합니다.
+**연결 해제**를 누르면 StreamPing이 연결 과정에서 생성한 Webhook도 함께 삭제됩니다.
+
+#### 수동 Webhook 사용
+
+간편 연결을 사용할 수 없는 경우 **수동 Webhook (고급)**에 Discord Webhook URL을 직접
+입력할 수 있습니다. 수동으로 입력한 Webhook은 **연결 해제**를 눌러도 Discord 서버에서
+자동 삭제되지 않으므로 Discord 채널 설정에서 직접 관리해야 합니다.
+
+### 3. X 작성 화면 설정
+
+1. **방송 시작 시 X 작성 화면 열기**를 체크합니다.
+2. **메시지**에서 X에 넣을 문구를 편집합니다.
+3. **X 작성 화면 테스트**를 누릅니다.
+4. 브라우저에 방송 정보가 입력된 X 작성 화면이 열리는지 확인합니다.
+
+OBS에서 방송을 시작하고 치지직 LIVE 상태가 확인되면 같은 방식으로 X 작성 화면이
+열립니다. 게시 전 문구와 계정을 확인한 뒤 사용자가 직접 게시합니다.
+
+### 4. 메시지 템플릿
+
+Discord와 X 메시지에는 다음 변수를 사용할 수 있습니다.
+
+| 변수 | 내용 |
+| --- | --- |
+| `{title}` | 방송 제목 |
+| `{category}` | 방송 카테고리 |
+| `{channel}` | 치지직 채널 이름 |
+| `{url}` | 치지직 방송 주소 |
+
+각 변수는 알림을 만들 때 실제 방송 정보로 바뀝니다. Discord와 X의 메시지는 서로 별도로
+저장되므로 서비스에 맞게 다른 문구를 사용할 수 있습니다.
+
+### 5. LIVE 확인 설정
+
+대부분의 경우 기본값을 그대로 사용하면 됩니다. 조정이 필요하면 접혀 있는 **LIVE 확인**을
+눌러 다음 항목을 변경합니다.
+
+| 항목 | 기본값 | 설명 |
+| --- | ---: | --- |
+| 첫 확인 지연 | 5초 | OBS 방송 시작 후 첫 치지직 확인까지 기다리는 시간 |
+| 확인 간격 | 5초 | 아직 LIVE가 아닐 때 다시 확인하는 간격 |
+| 최대 대기 | 120초 | LIVE 확인을 계속 시도하는 최대 시간 |
+
+치지직의 LIVE 반영이 OBS보다 늦을 수 있으므로 StreamPing은 최대 대기 시간 동안 반복해서
+확인합니다. 같은 방송에는 Discord 알림과 X 작성 화면을 각각 한 번만 실행합니다.
+
+### 6. 저장
+
+모든 테스트가 끝나면 **저장**을 누릅니다. **취소**를 누르면 이번에 편집한 일반 설정은
+저장되지 않습니다. Discord 연결이 완료된 경우 연결 정보는 완료 시점에 안전하게 저장됩니다.
+
+## 제거
+
+1. OBS Studio를 완전히 종료합니다.
+2. 가능하면 먼저 StreamPing 설정에서 Discord **연결 해제**를 눌러 생성된 Webhook을 삭제합니다.
+3. OBS 설치 폴더에서 다음 항목을 삭제합니다.
+
+```text
+obs-plugins\64bit\streamping.dll
+data\obs-plugins\streamping\
+```
+
+## 문제 해결
+
+- **설치 프로그램이 OBS를 찾지 못함**: 위의 `-ObsPath` 옵션으로 OBS 폴더를 지정합니다.
+- **OBS가 실행 중이라는 오류**: 작업 표시줄과 시스템 트레이에서도 OBS를 완전히 종료한 뒤 다시 실행합니다.
+- **Discord 연결 실패**: 선택한 Discord 채널에서 Webhook을 만들 수 있는 권한이 있는지 확인합니다.
+- **알림이 오지 않음**: `치지직 확인`과 `알림 메시지 테스트`를 차례로 실행해 채널 및 Discord 연결을 점검합니다.
+- **X 화면이 열리지 않음**: Windows의 기본 브라우저 설정과 팝업 차단 여부를 확인합니다.
+
+버그 신고와 소스 코드는 [TereBin/StreamPing](https://github.com/TereBin/StreamPing)에서
+확인할 수 있습니다.
