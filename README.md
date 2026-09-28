@@ -75,6 +75,8 @@ install.cmd -ObsPath "D:\Apps\obs-studio"
 
 Discord 연결을 완료하려면 선택한 채널에서 Webhook을 만들 수 있는 권한이 필요합니다.
 **연결 해제**를 누르면 StreamPing이 연결 과정에서 생성한 Webhook도 함께 삭제됩니다.
+알림에는 전송 직전에 확인한 현재 방송 제목, 채널, 카테고리와 가능한 경우 LIVE 썸네일이
+임베드로 표시됩니다. Discord가 링크에서 자동 생성하는 미리보기는 사용하지 않습니다.
 
 #### Discord 메시지 예시
 
