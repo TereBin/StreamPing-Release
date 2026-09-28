@@ -144,3 +144,8 @@ data\obs-plugins\streamping\
 
 버그 신고와 소스 코드는 [TereBin/StreamPing](https://github.com/TereBin/StreamPing)에서
 확인할 수 있습니다.
+
+## 후원
+
+StreamPing이 도움이 되었다면 [Ko-fi에서 TereBin 후원하기](https://ko-fi.com/terebin)를
+통해 개발을 응원할 수 있습니다.
