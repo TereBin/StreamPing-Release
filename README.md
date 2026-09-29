@@ -39,6 +39,8 @@ Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 �
 [최신 릴리스](https://github.com/TereBin/StreamPing-Release/releases/latest)에서
 `StreamPing-버전-windows-x64.zip` 파일을 다운로드합니다.
 
+[최신 Windows 버전 바로 다운로드](https://github.com/TereBin/StreamPing-Release/releases/latest/download/StreamPing-windows-x64.zip)
+
 다운로드한 파일은 같은 릴리스에 첨부된 `SHA256SUMS.txt`로 무결성을 확인할 수 있습니다.
 
 StreamPing은 OBS 실행 후 하루에 한 번 GitHub 최신 릴리스를 확인합니다. 선택, 권장 또는
