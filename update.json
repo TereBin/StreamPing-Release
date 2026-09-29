@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "latestVersion": "0.5.0",
+  "minimumSupportedVersion": "0.5.0",
+  "urgency": "recommended",
+  "title": "StreamPing 0.5.0 업데이트",
+  "message": "OBS에서 새 버전을 자동으로 확인하고 업데이트 중요도에 맞는 알림을 표시합니다.",
+  "downloadUrl": "https://github.com/TereBin/StreamPing-Release/releases/latest"
+}
