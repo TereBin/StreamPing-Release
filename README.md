@@ -7,11 +7,13 @@ Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 �
 
 - [최신 버전 다운로드](#다운로드)
 - [설치 및 업데이트](#설치-및-업데이트)
+- [설정 방법](#설정-방법)
 - [치지직 채널 설정](#1-치지직-채널-설정)
 - [Discord 알림 설정](#2-discord-알림-설정)
 - [X 작성 화면 설정](#3-x-작성-화면-설정)
 - [문제 해결](#문제-해결)
 - [보안과 소스 코드](#보안과-소스-코드)
+- [문제 보고 및 문의](#문제-보고)
 
 ## 베타 안내
 
@@ -46,7 +48,11 @@ Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 �
 - [최신 Windows 버전 바로 다운로드](https://github.com/TereBin/StreamPing-Release/releases/latest/download/StreamPing-windows-x64.zip)
 - [최신 릴리스 페이지와 변경 사항 보기](https://github.com/TereBin/StreamPing-Release/releases/latest)
 
-다운로드한 ZIP은 릴리스에 첨부된 `SHA256SUMS.txt`로 무결성을 확인할 수 있습니다.
+다운로드한 ZIP은 [SHA256SUMS.txt](./SHA256SUMS.txt)와 비교해 무결성을 확인할 수 있습니다.
+
+```powershell
+Get-FileHash .\StreamPing-windows-x64.zip -Algorithm SHA256
+```
 
 ## 설치 및 업데이트
 
@@ -61,11 +67,6 @@ Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 �
 `streamping.dll.bak`으로 백업한 뒤 새 버전으로 교체합니다. 이후 업데이트도 같은 순서로
 진행하면 됩니다.
 
-StreamPing은 기본적으로 OBS 실행 후 하루에 한 번 새 버전을 확인합니다. 업데이트 중요도에
-따라 선택, 권장 또는 필수 알림을 표시하며, 필수가 아닌 버전은 건너뛸 수 있습니다. 자동으로
-설치하지는 않으며, 설정 화면의 **업데이트 > 지금 확인**에서 직접 확인하거나 자동 확인을
-끌 수 있습니다.
-
 ### 포터블 OBS 또는 자동 탐색 실패 시
 
 명령 프롬프트에서 `bin\64bit\obs64.exe`가 들어 있는 OBS 최상위 폴더를 지정합니다.
@@ -73,6 +74,13 @@ StreamPing은 기본적으로 OBS 실행 후 하루에 한 번 새 버전을 확
 ```bat
 install.cmd -ObsPath "D:\Apps\obs-studio"
 ```
+
+### 업데이트 확인
+
+StreamPing은 기본적으로 OBS 실행 후 하루에 한 번 새 버전을 확인합니다. 업데이트 중요도에
+따라 선택, 권장 또는 필수 알림을 표시하며, 필수가 아닌 버전은 건너뛸 수 있습니다. 자동으로
+설치하지는 않으며, 설정 화면의 **업데이트 > 지금 확인**에서 직접 확인하거나 자동 확인을
+끌 수 있습니다.
 
 ## 설정 방법
 
@@ -207,6 +215,7 @@ X에는 자동으로 게시하지 않습니다. 방송 시작 시 작성 화면�
 
 ```text
 obs-plugins\64bit\streamping.dll
+obs-plugins\64bit\streamping.dll.bak
 data\obs-plugins\streamping\
 ```
 
@@ -328,12 +337,17 @@ Discord 간편 연결 및 역할 선택 과정에서 사용하는 임시 세션 
 
 플러그인 소스 코드, 빌드 방법, Discord 연결용 Worker 구성은
 [StreamPing 소스 저장소](https://github.com/TereBin/StreamPing)에서 확인할 수 있습니다.
+StreamPing은 [GNU General Public License v2.0](./LICENSE)으로 배포됩니다.
 
 ## 문제 보고
 
 오류 보고와 기능 제안은 [StreamPing Issues](https://github.com/TereBin/StreamPing/issues)를
 이용해 주세요. 공개 이슈 작성이 어렵거나 개별 문의가 필요하면
 [Discord에서 TereBin에게 문의](https://discordapp.com/users/537256771501424640)할 수 있습니다.
+
+OBS에서 **도움말 > 로그 파일 > 현재 로그 보기**를 선택하고, 문제 발생 직후 로그에서
+`[StreamPing]`이 포함된 줄과 설정 창 아래의 오류 문구를 함께 제공하면 원인 확인이
+빨라집니다.
 
 어느 경로로 문의하더라도 Discord Webhook URL, Discord Client Secret, 액세스 토큰, 실제
 `worker/wrangler.toml` 또는 StreamPing의 `settings.json` 파일은 첨부하거나 전송하지 마세요.
