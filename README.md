@@ -222,8 +222,24 @@ data\obs-plugins\streamping\
 - **알림이 오지 않음**: `치지직 확인`과 `알림 메시지 테스트`를 차례로 실행해 채널 및 Discord 연결을 점검합니다.
 - **X 화면이 열리지 않음**: Windows의 기본 브라우저 설정과 팝업 차단 여부를 확인합니다.
 
-버그 신고와 소스 코드는 [TereBin/StreamPing](https://github.com/TereBin/StreamPing)에서
-확인할 수 있습니다.
+## 보안과 소스 코드
+
+Discord Webhook URL은 Windows DPAPI로 암호화되어 현재 Windows 사용자만 해독할 수 있는
+로컬 설정 파일에 저장됩니다. Discord Client Secret과 실제 운영 환경의 Worker 설정은 이
+배포 저장소나 소스 저장소에 포함되지 않습니다.
+
+Discord 간편 연결 및 역할 선택 과정에서 사용하는 임시 세션 정보는 Worker에 제한된 시간만
+보관되며, 플러그인이 연결 정보를 가져가거나 유효 시간이 지나면 삭제됩니다. X 기능은 API
+토큰을 저장하지 않으며 게시 전 사용자가 직접 내용을 확인하고 전송합니다.
+
+플러그인 소스 코드, 빌드 방법, Discord 연결용 Worker 구성은
+[StreamPing 소스 저장소](https://github.com/TereBin/StreamPing)에서 확인할 수 있습니다.
+
+## 문제 보고
+
+오류를 보고할 때는 [StreamPing Issues](https://github.com/TereBin/StreamPing/issues)를 이용해
+주세요. Discord Webhook URL, Discord Client Secret, 액세스 토큰, 실제 `worker/wrangler.toml`
+또는 StreamPing의 `settings.json` 파일은 이슈나 로그에 첨부하지 마세요.
 
 ## 후원
 
