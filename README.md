@@ -331,9 +331,12 @@ Discord 간편 연결 및 역할 선택 과정에서 사용하는 임시 세션 
 
 ## 문제 보고
 
-오류를 보고할 때는 [StreamPing Issues](https://github.com/TereBin/StreamPing/issues)를 이용해
-주세요. Discord Webhook URL, Discord Client Secret, 액세스 토큰, 실제 `worker/wrangler.toml`
-또는 StreamPing의 `settings.json` 파일은 이슈나 로그에 첨부하지 마세요.
+오류 보고와 기능 제안은 [StreamPing Issues](https://github.com/TereBin/StreamPing/issues)를
+이용해 주세요. 공개 이슈 작성이 어렵거나 개별 문의가 필요하면
+[Discord에서 TereBin에게 문의](https://discordapp.com/users/537256771501424640)할 수 있습니다.
+
+어느 경로로 문의하더라도 Discord Webhook URL, Discord Client Secret, 액세스 토큰, 실제
+`worker/wrangler.toml` 또는 StreamPing의 `settings.json` 파일은 첨부하거나 전송하지 마세요.
 
 ## 후원
 
