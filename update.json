@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "0.6.1",
+  "latestVersion": "0.6.2",
   "minimumSupportedVersion": "0.5.0",
   "urgency": "optional",
-  "title": "StreamPing 0.6.1 업데이트",
-  "message": "설치 완료 메시지를 확인한 뒤 키를 눌러 설치 창을 닫도록 개선했습니다.",
+  "title": "StreamPing 0.6.2 업데이트",
+  "message": "Discord 메시지 미리보기에서 역할 ID 대신 선택한 역할 이름을 표시하도록 수정했습니다.",
   "downloadUrl": "https://github.com/TereBin/StreamPing-Release/releases/latest"
 }
