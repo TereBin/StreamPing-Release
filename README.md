@@ -47,7 +47,7 @@ Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 �
 
 ## 다운로드
 
-현재 버전은 `0.6.0`입니다.
+현재 버전은 `0.6.1`입니다.
 
 - [최신 Windows 버전 바로 다운로드](https://github.com/TereBin/StreamPing-Release/releases/latest/download/StreamPing-windows-x64.zip)
 - [최신 릴리스 페이지와 변경 사항 보기](https://github.com/TereBin/StreamPing-Release/releases/latest)
@@ -65,7 +65,8 @@ Get-FileHash .\StreamPing-windows-x64.zip -Algorithm SHA256
 3. 압축을 푼 폴더에서 `install.cmd`를 실행합니다.
 4. 관리자 권한 요청이 나타나면 승인합니다.
 5. `StreamPing 업데이트가 완료되었습니다.`라는 메시지를 확인합니다.
-6. OBS를 실행하고 **도구 > StreamPing 설정**을 엽니다.
+6. 안내에 따라 아무 키나 눌러 설치 창을 닫습니다.
+7. OBS를 실행하고 **도구 > StreamPing 설정**을 엽니다.
 
 설치 프로그램은 OBS 설치 위치를 자동으로 찾습니다. 기존 StreamPing이 있으면 DLL을
 `streamping.dll.bak`으로 백업한 뒤 새 버전으로 교체합니다. 이후 업데이트도 같은 순서로
