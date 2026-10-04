@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "0.5.1",
+  "latestVersion": "0.6.0",
   "minimumSupportedVersion": "0.5.0",
   "urgency": "optional",
-  "title": "StreamPing 0.5.1 업데이트",
-  "message": "치지직, Discord, X 테스트 버튼을 각 기능 섹션 안에서 바로 찾을 수 있도록 배치를 정리했습니다.",
+  "title": "StreamPing 0.6.0 업데이트",
+  "message": "Discord 임베드 설정, 메시지 미리보기와 초기화, 진단 정보 복사 및 문의 바로 가기를 추가했습니다.",
   "downloadUrl": "https://github.com/TereBin/StreamPing-Release/releases/latest"
 }
