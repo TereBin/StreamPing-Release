@@ -47,7 +47,7 @@ Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 �
 
 ## 다운로드
 
-현재 버전은 `0.6.3`입니다.
+현재 버전은 `0.6.4`입니다.
 
 - [최신 Windows 버전 바로 다운로드](https://github.com/TereBin/StreamPing-Release/releases/latest/download/StreamPing-windows-x64.zip)
 - [최신 릴리스 페이지와 변경 사항 보기](https://github.com/TereBin/StreamPing-Release/releases/latest)
@@ -205,8 +205,8 @@ X에는 자동으로 게시하지 않습니다. 방송 시작 시 작성 화면�
 
 ### 4. LIVE 확인 설정
 
-대부분의 경우 기본값을 그대로 사용하면 됩니다. 조정이 필요할 때만 접혀 있는 **LIVE 확인**을
-눌러 다음 항목을 변경합니다.
+대부분의 경우 기본값을 그대로 사용하면 됩니다. 설정 화면의 **LIVE 확인**에서 다음 항목을
+변경할 수 있습니다.
 
 | 항목 | 기본값 | 설명 |
 | --- | ---: | --- |

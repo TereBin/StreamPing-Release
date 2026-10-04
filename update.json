@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "0.6.3",
+  "latestVersion": "0.6.4",
   "minimumSupportedVersion": "0.5.0",
   "urgency": "optional",
-  "title": "StreamPing 0.6.3 업데이트",
-  "message": "설정 창의 모든 항목을 세로 스크롤로 확인할 수 있도록 개선했습니다.",
+  "title": "StreamPing 0.6.4 업데이트",
+  "message": "LIVE 확인 설정을 지원 섹션 위로 이동하고 항상 표시하도록 정리했습니다.",
   "downloadUrl": "https://github.com/TereBin/StreamPing-Release/releases/latest"
 }
